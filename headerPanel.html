@@ -1,0 +1,97 @@
+<table border=0 cellpadding=5 width=100% >
+  <tr>
+    <td  width=250 align=center>
+      <h2> PD Module</h2>
+    </td>
+    <td  width=400 align=center>
+      <button id="reset_button" type="button" class="btn" onclick="$('#run_calculations').val('0').change();">Reset</button>
+      <input id="run_calculations" type="text" value="0" style="display:none;"/>
+      <button id="run_calculations_button" type="button" class="btn btn-success" 
+      onclick="var curr_val = $('#run_calculations').val();  $('#run_calculations').val(parseInt(curr_val)+1).change();">Run calculations</button>      
+    </td>
+    <td>
+      <button type="button"id="plot_PD_button" class="btn" onclick="$('#plot_PD_button').button('toggle');", style="width:150px" >Plot PD</button> 
+      <input id="plot_PD_value" type="text" value="no" style="display:none;"/>
+      <script> $('#plot_PD_button').toggle(function()
+                  {$('#plot_PD_value').val('yes').change()}, 
+              function(){$('#plot_PD_value').val('no').change()});
+      </script>
+    </td>  
+    <td valign=middle>
+      <button type="button" id="plot_freq_PD_button" class="btn"onclick="$('#plot_freq_PD_button').button('toggle');", 
+      style="width:150px">Plot frequency PD</button> 
+      <input id="plot_freq_PD_value"  type="text"  value="no"  style="display:none;"/>
+      <script> $('#plot_freq_PD_button').toggle(function() {$('#plot_freq_PD_value').val('yes').change()}, 
+      function(){$('#plot_freq_PD_value').val('no').change()});
+      </script>
+    </td>
+    <td valign=middle>
+      <div class="btn-group"> 
+      <button id="plot_cum_PD_button"  type="button"  class="btn" onclick="$('#plot_cum_PD_button').button('toggle');"> Plot cumulative PD</button>
+      <button class="btn dropdown-toggle", data-toggle="dropdown">
+      <span class="caret"></span></button>
+        <ul class="dropdown-menu"> 
+          <li> <a id="cum_PD_by_cohort_button">by cohort</a> </li>
+        </ul>
+      </div>
+      <input id="plot_cum_PD_value"  type="text"  value="no"  style="display:none;"/>
+      <input id="cum_PD_by_cohort_value"  type="text"  value="no"  style="display:none;"/>
+      <script>$('#cum_PD_by_cohort_button').toggle(function()
+      {
+       $('#cum_PD_by_cohort_button').css('font-weight','bold');
+       $('#cum_PD_by_cohort_value').val('yes').change();
+      }, 
+      function()
+      {
+      $('#cum_PD_by_cohort_button').css('font-weight','normal');
+      $('#cum_PD_by_cohort_value').val('no').change();
+      });
+      $('#plot_cum_PD_button').toggle(function()
+      {
+        $('#plot_cum_PD_value').val('yes').change()}, 
+      function(){$('#plot_cum_PD_value').val('no').change()});
+      </script>
+    </td>
+    <td width=500>
+     <div class="btn-group"> 
+      <button id="plot_inc_PD_button"  type="button"  class="btn" onclick="$('#plot_inc_PD_button').button('toggle');"> Plot incremental PD</button>
+      <button class="btn dropdown-toggle", data-toggle="dropdown">
+      <span class="caret"></span></button>
+        <ul class="dropdown-menu"> 
+          <li> <a id="inc_PD_by_cohort_button">by cohort</a> </li>
+          <li> <a id="inc_PD_by_quarter_button">by quarter</a></li>
+        </ul>
+      </div> 
+      <input id="plot_inc_PD_value"  type="text"  value="no"  style="display:none;"/>
+      <input id="inc_PD_by_cohort_value"  type="text"  value="no"  style="display:none;"/> 
+      <input id="inc_PD_by_quarter_value"  type="text"  value="no"  style="display:none;"/> 
+      <script>$('#inc_PD_by_cohort_button').toggle(function()
+      {
+       $('#inc_PD_by_cohort_button').css('font-weight','bold');
+       $('#inc_PD_by_cohort_value').val('yes').change();
+      }, 
+      function()
+      {
+      $('#inc_PD_by_cohort_button').css('font-weight','normal');
+      $('#inc_PD_by_cohort_value').val('no').change();
+      });
+          $('#inc_PD_by_quarter_button').toggle(function()
+          {
+             $('#inc_PD_by_quarter_button').css('font-weight','bold');
+             $('#inc_PD_by_quarter_value').val('yes').change();
+          }, 
+          function()
+          {
+            $('#inc_PD_by_quarter_button').css('font-weight','normal');
+            $('#inc_PD_by_quarter_value').val('no').change();
+          });
+          
+      $('#plot_inc_PD_button').toggle(function()
+      {
+        $('#plot_inc_PD_value').val('yes').change()}, 
+      function(){$('#plot_inc_PD_value').val('no').change()});
+      </script>   
+    </td>    
+  <tr>
+</table>
+
