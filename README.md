@@ -8,7 +8,6 @@ as well as sold to clients.
 The code hasn't been modified for quite some time and was optimized for early version of shiny library (0.50 if not mistaken) with Bootstrap 2 styles.
 
 Working version is here: https://holek10.shinyapps.io/PD_estimation_tool/
-
 Username: demo
 Password: demo
 
